@@ -121,43 +121,12 @@
   <dt>Trinity Term 2020</dt><dd>LEGO Football Coursework Module (2<sup>nd</sup> year) <a href="/assets/downloads/notes/lab_LEGO_students.pdf"> Lab Tasks</a> </dd> 
 </dl>
 
-Optimising your website for mobile devices: YouTube Videos
-Posted by jw285 at Feb 21, 2014 12:35 PM | Permalink
-Making embedded YouTube videos change size depending on the users' screen size.
-Optimising your website for mobile devices: YouTube Videos
-A while ago I wrote a blog post called Optimising your website for mobile devices: An Introduction which explained that the University website is now responsive (i.e. it changes layout depending on the visitors' screen size). However not all of a website's content, such as YouTube videos, will automatically resize accordingly. This can cause page layouts to 'break' on some devices. In this post I'll explain how to make YouTube videos resize according to the users' screen size. For this you'll need to edit a Plone page in HTML view. If you're not comfortable doing this then contact the Web Team and we'll do it for you.
-
-Get the video embed code
-Go you YouTube and get the embed code for the video that you'd like to embed. It will look something like this:
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/kcMn_hPWEIg?rel=0" 
-frameborder="0" allowfullscreen></iframe>
-See Embedding a YouTube video into a webpage for instructions.
-
-When you have the embed code you need to go to your Plone page, click Edit, click the HTML button to switch to code view and then paste the embed code into your page at the appropriate place. You now have a video but it's not responsive.
-
-Making the video responsive
-Now you have to wrap the YouTube embed code within an opening and closing <div> tag that contains a class called videoWrapper. Your code should look something like this:
-
-<div class="videoWrapper">
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/kcMn_hPWEIg?rel=0" 
-frameborder="0" allowfullscreen></iframe>
-
-</div>
-When you save the page the result will be a YouTube video that occupies the full width of the page and will resize accordingly when the width of the page changes.
-
-Restricting the width of the video
-If you'd like to restrict the width of the video so that it doesn't occupy the entire width of your Plone page then you can add another <div> tag that contains another class. There are three classes to choose from:
-
-class="embed-video-small" will restrict the video with to a maximum width of 332 pixels
-class="embed-video" will restrict the video with to a maximum width of 420 pixels
-class="embed-video-big" will restrict the video with to a maximum width of 520 pixels
-So now your embed code should look something like this:
-
-<div class="videoWrapper">
-<iframe width="440" height="400" src="/assets/downloads/videos/goal.mp4" type="video/mp4" > 
- </iframe>
+<div class="video-container">
+<iframe
+ <video width="440" height="400" controls autostart="false" preload="none" poster="/assets/images/robot_web.jpg"> 
+ <source src="/assets/downloads/videos/goal.mp4" type="video/mp4" > 
+ </video> 
+</iframe>
 </div>
 
     </div>
